@@ -1,0 +1,97 @@
+.registerbox{
+    /* width: 100%; */
+    padding-top: 4rem;
+}
+.bg-logreg{
+    background-image: url('../../wallpapermembertoko2.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-custom{
+    opacity: 0.95;
+    width: 100%;
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+    .registerbox{
+        /* width: 300px; */
+        padding-left: 60%;
+        padding-right: 10%;
+
+    }
+  .card-custom{
+    width: 422px;
+
+  }
+}
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .registerbox{
+        /* width: 300px; */
+        padding-left: 60%;
+        padding-right: 10%;
+    
+      }
+    .card-custom{
+        width: 422px;
+    
+      }
+}
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .registerbox{
+        position: absolute;
+        /* width: 300px; */
+        padding-top: 20%;
+        padding-left: 25%;
+        padding-right: 10%;
+    
+      }
+    .card-custom{
+        height: 422px;
+        width: 522px;
+    
+      }
+    
+}
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .card-custom{
+        width: 422px;
+    
+      }
+}
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .card-custom{
+        width: 422px;
+    
+      }
+}
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+    .registerbox{
+        padding-top: 20%;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+}
