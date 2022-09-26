@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Merchant;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -64,10 +65,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return Merchant::create([
+            'nama_merchant' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'idkategori'=> 1,
+            'idsubkategori'=> 2,
+            'idpaket'=> 0,
+            'tglberakhir'=> date('Y-m-d'),
         ]);
     }
 }

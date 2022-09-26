@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Kategori;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return redirect('/login');
+    // $kategori = Kategori::all();
+    // dd($kategori);
+
 });
 
 Auth::routes();
