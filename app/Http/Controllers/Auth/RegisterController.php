@@ -67,6 +67,7 @@ class RegisterController extends Controller
     {
         return Merchant::create([
             'nama_merchant' => $data['name'],
+            'nomor_unik'=>rand(11111,99999),
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'idkategori'=> 1,

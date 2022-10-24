@@ -26,6 +26,7 @@ class Merchant extends Authenticatable
         'idsubkategori',
         'idpaket',
         'tglberakhir',
+        'nomor_unik',
     ];
 
     /**

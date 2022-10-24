@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\profilecontroller;
 use App\Models\Kategori;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -34,3 +35,6 @@ Route::get('/loginadmin', function ()
 {
     return view('auth.loginadmin');
 })->middleware('guest');
+
+Route::get('/profile',[profilecontroller::class,'profile']);
+Route::post('/passverification',[profilecontroller::class,'oldpassverification']);

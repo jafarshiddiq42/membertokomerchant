@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         {{-- endfont --}}
         <link href="{{asset ('template/css/styles.css') }}" rel="stylesheet" />
+        
         <link rel="icon" type="image/x-icon" href="{{asset('template/assets/img/favicon.png')}}" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('template/js/jquery.js') }}"></script>
@@ -32,16 +33,16 @@
             <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">MemberToko</a>
             <!-- Navbar Search Input-->
             <!-- * * Note: * * Visible only on and above the lg breakpoint-->
-            <form class="form-inline me-auto d-none d-lg-block me-3">
+            {{-- <form class="form-inline me-auto d-none d-lg-block me-3">
                 <div class="input-group input-group-joined input-group-solid">
                     <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
                     <div class="input-group-text"><i data-feather="search"></i></div>
                 </div>
-            </form>
+            </form> --}}
             <!-- Navbar Items-->
             <ul class="navbar-nav align-items-center ms-auto">
                 <!-- Documentation Dropdown-->
-                <li class="nav-item dropdown no-caret d-none d-md-block me-3">
+                {{-- <li class="nav-item dropdown no-caret d-none d-md-block me-3">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="fw-500">Documentation</div>
                         <i class="fas fa-chevron-right dropdown-arrow"></i>
@@ -71,7 +72,7 @@
                             </div>
                         </a>
                     </div>
-                </li>
+                </li> --}}
                 <!-- Navbar Search Dropdown-->
                 <!-- * * Note: * * Visible only below the lg breakpoint-->
                 <li class="nav-item dropdown no-caret me-3 d-lg-none">
@@ -86,7 +87,7 @@
                         </form>
                     </div>
                 </li>
-                <!-- Alerts Dropdown-->
+                {{-- <!-- Alerts Dropdown-->
                 <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="bell"></i></a>
                     <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
@@ -172,7 +173,7 @@
                         <!-- Footer Link-->
                         <a class="dropdown-item dropdown-notifications-footer" href="#!">Read All Messages</a>
                     </div>
-                </li>
+                </li> --}}
                 <!-- User Dropdown-->
                 <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="{{asset('template/assets/img/illustrations/profiles/profile-1.png')}}" /></a>
@@ -185,10 +186,18 @@
                             </div>
                         </h6>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#!">
+                        <a class="dropdown-item" href="/profile">
                             <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                            Profile
                         </a>
+                        {{-- <a class="dropdown-item" href="/profile">
+                            <div class="dropdown-item-icon"><i data-feather="lock"></i></div>
+                            Ganti Password
+                        </a> --}}
+                        <button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#passwordchng">  <div class="dropdown-item-icon"><i data-feather="lock"></i></div>Ganti Password</button>
+
+                        
+
                         <form action="/logout" method="post">
                             @csrf
                             <button type="submit" class="dropdown-item"> <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>logout</button>
@@ -298,6 +307,29 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal fade" id="passwordchng" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Ganti Password</h5>
+                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="/passverification" method="post">
+                                    @csrf
+                                <div class="modal-body">
+                                   <label for="oldpass">Password Lama
+                                   </label>
+                                   <input type="password" name="oldpass" class="form-control form-control-sm" id="">
+                                   <div class="small text-danger" >*masukkan password lama</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-sm btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                                    <button class="btn btn-sm btn-primary" >Verifikasi</button>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </footer>
             </div>
         </div>
@@ -310,5 +342,7 @@
         <script src="{{asset('template/js/datatables/datatables-simple-demo.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
         <script src="{{asset('template/js/litepicker.js')}}"></script>
+     
+
     </body>
 </html>
