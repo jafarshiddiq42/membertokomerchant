@@ -38,3 +38,5 @@ Route::get('/loginadmin', function ()
 
 Route::get('/profile',[profilecontroller::class,'profile']);
 Route::post('/passverification',[profilecontroller::class,'oldpassverification']);
+Route::post('/resetpass',[profilecontroller::class,'reset']);
+Route::get('/passlogout',[profilecontroller::class,'resetc']);

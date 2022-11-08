@@ -4,9 +4,9 @@
     <!-- Account page navigation-->
     <nav class="nav nav-borders">
         <a class="nav-link active ms-0" href="account-profile.html">Profile</a>
-        <a class="nav-link" href="account-billing.html">Billing</a>
-        <a class="nav-link" href="account-security.html">Security</a>
-        <a class="nav-link" href="account-notifications.html">Notifications</a>
+        <a class="nav-link" href="account-billing.html">Banner Promo</a>
+        <a class="nav-link" href="account-security.html">Banner Flash-Sale </a>
+        {{-- <a class="nav-link" href="account-notifications.html">Notifications</a> --}}
     </nav>
     <hr class="mt-0 mb-4" />
     <div class="row">
@@ -29,7 +29,12 @@
                     <!-- Profile picture image-->
                     <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" />
                     <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">QR-code</div>
+                    <div class="small font-italic text-muted mb-4">
+                        <div class="visible-print text-center">
+                            {!! QrCode::size(100)->generate(url('profile/'.$profiledata->id)); !!}
+                            <p>Scan me to return to the original page.</p>
+                        </div>
+                    </div>
                     <!-- Profile picture upload button-->
                     {{-- <button class="btn btn-primary" type="button">Upload new image</button> --}}
                 </div>
@@ -45,7 +50,7 @@
                         <!-- Form Group (username)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputUsername">Nama Merchant</label>
-                            <input class="form-control form-control-sm" id="inputUsername" type="text" placeholder="Enter your username" value="{{ $profiledata->nama_merchant }}" />
+                            <input disabled class="form-control form-control-sm" id="inputUsername" type="text" placeholder="Enter your username" value="{{ $profiledata->nama_merchant }}" />
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-2 mb-2">
@@ -53,15 +58,15 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputFirstName">Kategori</label>
                                 {{-- <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name"  /> --}}
-                                <select name="kategori" class="form-control form-control-sm" id="">
+                                <select disabled name="kategori" class="form-control form-control-sm" id="">
                                     <option value="">{{ $kategori->kategori }}</option>
                                 </select>
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputLastName">Sub-kategori</label>
+                                <label class="small mb-1"  for="inputLastName">Sub-kategori</label>
                                 {{-- <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name"  /> --}}
-                                <select name="subkategori" class="form-control form-control-sm" id="">
+                                <select disabled name="subkategori" class="form-control form-control-sm" id="">
                                     <option value="">{{ $subkategori->sub_kategori }}</option>
                                 </select>
                             </div>
@@ -109,19 +114,19 @@
                             <!-- Form Group (phone number)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputPhone">Status</label>
-                                <input class="form-control form-control-sm" id="inputPhone" type="tel" placeholder="Enter your phone number" />
+                                <input disabled class="form-control form-control-sm" id="inputPhone" type="tel" placeholder="Enter your phone number" value="{{ $profiledata->status }}" />
                             </div>
                             <!-- Form Group (birthday)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputBirthday">Keterangan</label>
-                                <input class="form-control form-control-sm" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday"  />
+                                <input disabled class="form-control form-control-sm" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="{{ $profiledata->keterangan }}"  />
                             </div>
                         </div>
                         <div class="row gx-2 mb-2">
                             <!-- Form Group (phone number)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputPhone">Telp</label>
-                                <input class="form-control form-control-sm" id="inputPhone" type="tel" placeholder="Enter your phone number" />
+                                <label class="small mb-1" for="inputPhone">Nomor Telepon</label>
+                                <input disabled  class="form-control form-control-sm" id="inputPhone" type="tel" placeholder="Enter your phone number"value="{{ $profiledata->telp }}"  />
                             </div>
                             <!-- Form Group (birthday)-->
                             <div class="col-md-6">

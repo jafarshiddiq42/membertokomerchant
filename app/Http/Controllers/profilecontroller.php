@@ -27,16 +27,35 @@ class profilecontroller extends Controller
         // return view('profile.profile');
         // echo 'hashi';
     }
+
+
+    // reset password
     public function oldpassverification(Request $request)
     {
         $oldpassword =$request->oldpass;
         if ( Hash::check($oldpassword, Auth::user()->password)) {
-            echo 'berhasil';
+            return view('profile.reset');
         }
         else {
             // Auth::logout();
             echo 'gagal';
             
         }
+    }
+    public function reset(Request $request)
+    {
+        // $validated = $request->validate([
+        //     'passw' => 'required|min:8',
+        // ]);
+        $password = Merchant::find(Auth::user()->id);
+        $password->password = Hash::make($request->pass);
+        $password->save();
+        return view('profile.resetsuccess');
+       
+    }
+    public function resetc()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }

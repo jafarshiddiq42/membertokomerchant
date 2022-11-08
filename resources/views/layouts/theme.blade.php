@@ -215,6 +215,29 @@
                 </li>
             </ul>
         </nav>
+        <div class="modal fade" id="passwordchng" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Ganti Password</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="/passverification" method="post">
+                        @csrf
+                    <div class="modal-body">
+                       <label for="oldpass">Password Lama
+                       </label>
+                       <input type="password" name="oldpass" class="form-control form-control-sm" id="">
+                       <div class="small text-danger" >*masukkan password lama</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-sm btn-primary" >Verifikasi</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sidenav shadow-right sidenav-light">
@@ -299,7 +322,7 @@
                 <footer class="footer-admin mt-auto footer-light">
                     <div class="container-xl px-4">
                         <div class="row">
-                            <div class="col-md-6 small">Copyright &copy; Your Website 2021</div>
+                            <div class="col-md-6 small">Copyright &copy; membertoko</div>
                             <div class="col-md-6 text-md-end small">
                                 <a href="#!">Privacy Policy</a>
                                 &middot;
@@ -307,42 +330,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="passwordchng" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Ganti Password</h5>
-                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <form action="/passverification" method="post">
-                                    @csrf
-                                <div class="modal-body">
-                                   <label for="oldpass">Password Lama
-                                   </label>
-                                   <input type="password" name="oldpass" class="form-control form-control-sm" id="">
-                                   <div class="small text-danger" >*masukkan password lama</div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-sm btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
-                                    <button class="btn btn-sm btn-primary" >Verifikasi</button>
-                                </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </footer>
+                 
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{asset('template/js/scripts.js')}}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script> --}}
         <script src="{{asset('template/assets/demo/chart-area-demo.js')}}"></script>
         <script src="{{asset('template/assets/demo/chart-bar-demo.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="{{asset('template/js/datatables/datatables-simple-demo.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
         <script src="{{asset('template/js/litepicker.js')}}"></script>
-     
+        @yield('script')
 
     </body>
 </html>
