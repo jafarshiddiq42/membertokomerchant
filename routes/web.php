@@ -37,6 +37,8 @@ Route::get('/loginadmin', function ()
 })->middleware('guest');
 
 Route::get('/profile',[profilecontroller::class,'profile']);
+Route::get('/editprofil',[profilecontroller::class,'edit']);
+Route::post('/editprofil',[profilecontroller::class,'save']);
 Route::post('/passverification',[profilecontroller::class,'oldpassverification']);
 Route::post('/resetpass',[profilecontroller::class,'reset']);
 Route::get('/passlogout',[profilecontroller::class,'resetc']);

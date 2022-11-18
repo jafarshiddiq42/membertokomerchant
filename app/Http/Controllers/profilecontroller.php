@@ -12,23 +12,14 @@ use Symfony\Component\Console\Input\Input;
 
 class profilecontroller extends Controller
 {
-    //
-
-    // public function profile()
-    // {
-    //     QrCode::generate('hu');
-    // }
+    //view profil    
     public function profile()
     {
         $profiledata = Merchant::findorfail(Auth::user()->id);
         $kategori = Kategori::find($profiledata->idkategori);
         $subkategori = Subkategori::find($profiledata->idsubkategori);
         return view('profile.profile',compact('profiledata','kategori','subkategori'));
-        // return view('profile.profile');
-        // echo 'hashi';
     }
-
-
     // reset password
     public function oldpassverification(Request $request)
     {
@@ -37,25 +28,42 @@ class profilecontroller extends Controller
             return view('profile.reset');
         }
         else {
-            // Auth::logout();
             echo 'gagal';
-            
         }
     }
+    // reset
     public function reset(Request $request)
     {
-        // $validated = $request->validate([
-        //     'passw' => 'required|min:8',
-        // ]);
         $password = Merchant::find(Auth::user()->id);
         $password->password = Hash::make($request->pass);
         $password->save();
         return view('profile.resetsuccess');
        
     }
+    // berhasil reset
     public function resetc()
     {
         Auth::logout();
         return redirect('/login');
+    }
+    public function edit()
+    {
+        $profiledata = Merchant::findorfail(Auth::user()->id);
+        $kategoris = Kategori::all();
+        $subkategoris = Subkategori::all();
+        return view('profile.profile_edit',compact('profiledata','kategoris','subkategoris'));
+    }
+    public function save(Request $request)
+    {
+        $profiledata = Merchant::findorfail(Auth::user()->id);
+        $profiledata->nama_merchant = $request->nama_merch;
+        $profiledata->idkategori = $request->kategori_merch;
+        $profiledata->idsubkategori = $request->subkategori_merch;
+        $profiledata->idsubkategori = $request->subkategori_merch;
+        $profiledata->keterangan = $request->keterangan_merch;
+        $profiledata->telp = $request->telp_merch;
+        $profiledata->save();
+        return redirect('/profile');
+        // dd($request);    
     }
 }

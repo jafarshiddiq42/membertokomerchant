@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ed2459f1f23df1694696f58a6c1227db9b111ca4',
+        'reference' => 'fddd16c804ed47e9e8619416e4ca9f7fa44bee2f',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -113,12 +113,12 @@
             'dev_requirement' => true,
         ),
         'filp/whoops' => array(
-            'pretty_version' => '2.14.5',
-            'version' => '2.14.5.0',
+            'pretty_version' => '2.14.6',
+            'version' => '2.14.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
-            'reference' => 'a63e5e8f26ebbebf8ed3c5c691637325512eb0dc',
+            'reference' => 'f7948baaa0330277c729714910336383286305da',
             'dev_requirement' => true,
         ),
         'fruitcake/php-cors' => array(
@@ -388,7 +388,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ed2459f1f23df1694696f58a6c1227db9b111ca4',
+            'reference' => 'fddd16c804ed47e9e8619416e4ca9f7fa44bee2f',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -446,12 +446,12 @@
             'dev_requirement' => false,
         ),
         'league/commonmark' => array(
-            'pretty_version' => '2.3.6',
-            'version' => '2.3.6.0',
+            'pretty_version' => '2.3.7',
+            'version' => '2.3.7.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/commonmark',
             'aliases' => array(),
-            'reference' => '857afc47ce113454bd629037213378ba3219dd40',
+            'reference' => 'a36bd2be4f5387c0f3a8792a0d76b7d68865abbf',
             'dev_requirement' => false,
         ),
         'league/config' => array(
@@ -756,12 +756,12 @@
             ),
         ),
         'psy/psysh' => array(
-            'pretty_version' => 'v0.11.8',
-            'version' => '0.11.8.0',
+            'pretty_version' => 'v0.11.9',
+            'version' => '0.11.9.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psy/psysh',
             'aliases' => array(),
-            'reference' => 'f455acf3645262ae389b10e9beba0c358aa6994e',
+            'reference' => '1acec99d6684a54ff92f8b548a4e41b566963778',
             'dev_requirement' => false,
         ),
         'ralouphie/getallheaders' => array(
@@ -783,18 +783,18 @@
             'dev_requirement' => false,
         ),
         'ramsey/uuid' => array(
-            'pretty_version' => '4.5.1',
-            'version' => '4.5.1.0',
+            'pretty_version' => '4.6.0',
+            'version' => '4.6.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ramsey/uuid',
             'aliases' => array(),
-            'reference' => 'a161a26d917604dc6d3aa25100fddf2556e9f35d',
+            'reference' => 'ad63bc700e7d021039e30ce464eba384c4a1d40f',
             'dev_requirement' => false,
         ),
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '4.5.1',
+                0 => '4.6.0',
             ),
         ),
         'sebastian/cli-parser' => array(
