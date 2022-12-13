@@ -66,4 +66,8 @@ class profilecontroller extends Controller
         return redirect('/profile');
         // dd($request);    
     }
+    public function map()
+    {
+        return view('profile.map');
+    }
 }

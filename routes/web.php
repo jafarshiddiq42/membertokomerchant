@@ -42,3 +42,4 @@ Route::post('/editprofil',[profilecontroller::class,'save']);
 Route::post('/passverification',[profilecontroller::class,'oldpassverification']);
 Route::post('/resetpass',[profilecontroller::class,'reset']);
 Route::get('/passlogout',[profilecontroller::class,'resetc']);
+Route::get('/map',[profilecontroller::class,'map']);

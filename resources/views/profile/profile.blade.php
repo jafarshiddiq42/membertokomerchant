@@ -27,7 +27,7 @@
                             src="assets/img/illustrations/profiles/profile-1.png" alt="" />
                         <div class="small font-italic text-muted mb-4">
                             <div class="visible-print text-center">
-                                {!! QrCode::size(140)->generate(url('profile/' . $profiledata->nomor_unik)) !!}
+                                {!! QrCode::size(140)->generate(url('profile/' . Hash::make($profiledata->nomor_unik))) !!}
                                 {{-- <p>Scan me to return to the original page.</p> --}}
                             </div>
                         </div>
@@ -145,6 +145,8 @@
                             <div class="">
                             <a class="btn  btn-primary" href="/editprofil" >Edit Profil <i style="margin-left: 4px" class="fa fa-pencil"></i></a>
                             </div>
+                            <div id='map'></div>
+	
                         </form>
                     </div>
                 </div>
