@@ -14,7 +14,7 @@
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Profile Picture</div>
                     <div class="card-body text-center">                       
-                        <img class="img-account-profile  mb-2"
+                        <img class="img-account-profile  mb-2" style="width: 160px"
                             src="{{ $profiledata->url_gambar }}"
                              />
                     </div>
@@ -23,8 +23,7 @@
                 <div class="card my-4 mb-xl-0">
                     <div class="card-header">Qr-Code</div>
                     <div class="card-body text-center">
-                        <img class="img-account-profile rounded-circle mb-2"
-                            src="assets/img/illustrations/profiles/profile-1.png" alt="" />
+                        
                         <div class="small font-italic text-muted mb-4">
                             <div class="visible-print text-center">
                                 {!! QrCode::size(140)->generate(url('profile/' . Hash::make($profiledata->nomor_unik))) !!}
